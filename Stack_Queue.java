@@ -30,9 +30,40 @@ public class Stack_Queue {
 		}
 
 	}
+	
+	boolean pop() {
+		// TODO Auto-generated method stub
+		
+		/*
+		 * Checking if the stack 
+		 * is empty or not
+		 */
+		if(top == -1) {
+			System.out.println("STACK UNDERFLOW");
+			return false;
+		}
+		else {
+			/*
+			 * Decrementing the top value 
+			 * and deleting the element from stack
+			 */
+			top = top-1;
+			return true;
+		}
+	
+	}
 
 	void display() {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * Checking if the stack 
+		 * is empty or not
+		 */
+		if(top == -1) {
+			System.out.println();
+			System.out.println("Stack is Empty");
+		}
 
 		// Displaying the stack elements
 		for (int i = top; i >= 0; i--) {
@@ -52,10 +83,10 @@ public class Stack_Queue {
 		System.out.println();
 
 		int ch = 0;
-		while (ch != 3) {
+		while (ch != 4) {
 			System.out.println("MENU FOR OPERATIONS ON STACK");
 			// Menu for Operations on Stack
-			System.out.println("1.Insert an element into stack \n2.Display the stack elements \n3.Exit");
+			System.out.println("1.Insert an element into stack \n2.Delete an element from stack \n3.Display the stack elements \n4.Exit");
 			System.out.println("---------------------------------------------------------");
 
 			System.out.println("Enter choice");
@@ -72,13 +103,19 @@ public class Stack_Queue {
 				System.out.println("---------------------------------------------------------");
 				break;
 
-			case 2:
+			case 2 :
+				sq.pop();
+				System.out.println("Deleted the top of stack");
+				System.out.println("---------------------------------------------------------");
+				break;
+				
+			case 3:
 				System.out.println("DISPLAYING STACK ELEMENTS");
 				sq.display();
 				System.out.println("---------------------------------------------------------");
 				break;
 
-			case 3:
+			case 4:
 				System.out.println("Exit");
 				System.exit(0);
 				break;
